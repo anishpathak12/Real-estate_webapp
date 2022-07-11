@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import './Seachbar.css';
+import './Data.css'
+import Searchbar from './Searchbar.js';
+import Data from './Data';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='navbar'>
+        <ul>
+          <li><h3>Estatery</h3></li>
+          <li>Rent</li>
+          <li>Buy</li>
+          <li>Sell</li>
+          <li>
+            <label>Manage property</label>
+            <select name="Manage Property">
+              {/* <option value ="a">a</option>
+              <option value ="b">b</option> */}
+            </select></li>
+          <li>
+          <label>Resources</label>
+          <select name="Resources">
+          </select>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button className= "button1">Login</button>
+          </li>
+          <li>
+            <button className= "button2">Sign up</button>
+          </li>
+        </ul>
+      </div>
+      <Data />
     </div>
   );
 }

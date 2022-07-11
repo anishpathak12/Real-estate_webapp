@@ -1,0 +1,17 @@
+.Searchbar{
+    /* text-align: center; */
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.filterButtons{
+    background-color: white;
+    padding: 20px;
+    margin: 0 350px 0 350px;
+}
