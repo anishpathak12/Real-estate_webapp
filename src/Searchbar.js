@@ -1,26 +1,31 @@
 import { useState } from "react";
-import Data from "./Data";
 
 export default function Searchbar(props) {
   const [location, SetLocation] = useState("New York");
-  const [time, SetTime] = useState();
-  const [price, SetPrice] = useState();
-  const [type, SetType] = useState();
+  const [time, SetTime] = useState('Immidiate');
+  const [price, SetPrice] = useState([500,2000]);
+  const [type, SetType] = useState('Houses');
+  const [filteredData, SetFilteredData] = useState([props.props]);
+  
+console.log(price)
+// console.log(price[1])
+  const filterMethod = (e) => {
+    e.preventDefault();
+    SetFilteredData(props.props.filter (prop =>{
+      return (
+        prop.location == location &&
+        prop.time == time &&
+        // (prop.price >= price[0] && prop.price <= price[1]) &&
+        prop.type == type
+        )
 
-  const filterMethod = () => {
-    // switch (time) {
-    //     case "Immediate":
-    //         console.log("N.Y");
-    //         break;
-    //     case "Ontario":
-    //         console.log("ontario");
-    //         break;
-    //     default:
-    //         console.log("pathak");
-    //         break;
-    // }
-     console.log(props)
-  };
+    }))
+  }
+
+//      useRecoilState      for using global state
+// useRecoilValue
+// useSetRecoilState
+
 
   return (
     <div className="Searchbar">
@@ -41,16 +46,16 @@ export default function Searchbar(props) {
         <label>When</label>
         <select name="when" id="when"
         onChange={(e) => SetTime(e.target.value)}>
-          <option value="Immediate">Immediate</option>
+          <option value="Immidiate">Immidiate</option>
           <option value="After 15 Days">After 15 Days</option>
           <option value="After 1 Month">After 1 Month</option>
         </select>
         <label>Price</label>
         <select name="Price" id="Price"
         onChange={(e) => SetPrice(e.target.value)}>
-          <option value="$500-2000">$500-2000</option>
-          <option value="$2000-3000">$2000-3000</option>
-          <option value="$3000-$5000">$3000-$5000</option>
+          <option value={[500,2000]}>$500-2000</option>
+          <option value={[2000,3000]}>$2000-3000</option>
+          <option value={[3000,5000]}>$3000-$5000</option>
         </select>
 
         <label>PropertyType</label>
@@ -61,6 +66,18 @@ export default function Searchbar(props) {
           <option value="Dorm">Dorm</option>
         </select>
         <button onClick={filterMethod} className= "button2">Search</button>
+      </div>
+      <div className="Data">
+     {/* { console.log('anish')}   // why rendering 2 times. */}
+     { console.log(filteredData)}
+            {filteredData.map(prop => (
+                <div className='render'>
+                    <span> <img src={prop.img} height= "200px" width= "200px"/></span>
+                    <p>{`$ ${prop.price}/month`}</p>
+                    <h3>{prop.location}</h3>
+                </div>
+
+            ))}
       </div>
       
       {/* <Data  /> */}

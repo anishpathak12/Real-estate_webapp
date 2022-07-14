@@ -17,60 +17,48 @@ export default function Data () {
         img: img1,
         location: 'New York',
         time: 'Immidiate',
-        price: `$ ${2095}/month`,
+        price: 2095,
         type: 'Houses',
     },
     {
         img: img2,
         location: 'Ontario',
         time: 'Immidiate',
-        price: `$ ${3150}/month`,
+        price: 3150,
         type: 'Villa',
     },
     {
         img: img3,
         location: 'New York',
         time: 'After 15 Days',
-        price: `$ ${1100}/month`,
+        price: 1100,
         type: 'Dorm',
     },
     {
         img: img4,
         location: 'Texas',
         time: 'After 1 Month',
-        price: `$ ${4500}/month`,
+        price: 4500,
         type: 'Houses',
     },
     {
         img: img5,
         location: 'Ontario',
         time: 'After 15 Days',
-        price: `$ ${800}/month`,
+        price: 800,
         type: 'Dorm',
     },
     {
         img: img6,
         location: 'Texas',
         time: 'After 1 Month',
-        price: `$ ${1900}/month`,
-        type: 'Vila',
+        price: 1900,
+        type: 'Villa',
     },]
 
     return(
         <div className='new'>
             <Searchbar props= {array}/>
-        <div className="Data">
-            {array.map(arr => (
-                <div className='render'>
-                    <span> <img src={arr.img} height= "200px" width= "200px"/></span>
-                    <p>{arr.price}</p>
-                    <h3>{arr.location}</h3>
-                </div>
-
-            ))}
-           
-
-        </div>
         </div>
 
     );
