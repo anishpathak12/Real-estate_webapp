@@ -6,7 +6,7 @@
 .navbar, ul{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(223, 233, 242);
+    background-color: #faf9fe;
 }
 
 li{
@@ -18,12 +18,12 @@ li{
 .button1{
     border: 1px solid rgb(156, 132, 240);
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
 }
 .button2{
     color: white;
     background-color: rgb(85, 85, 240);
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
 }
 

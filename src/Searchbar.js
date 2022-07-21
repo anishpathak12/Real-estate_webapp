@@ -30,28 +30,28 @@ console.log(price)
   return (
     <div className="Searchbar">
           <div className="header">
-                <h2>Search properties to rent</h2>
-                <select>
-                  <option>SerchwithSearchBar</option>
-                </select>
+                <h1>Search properties to rent</h1>
+                <input type= "text" placeholder= "SearchwithSearchbar" />
           </div>
       <div className="filterButtons">
         <label>Location</label>
-        <input
-          type="text"
-          value={location}
-          onChange={(e) => SetLocation(e.target.value)}
-        />
+        <select className="inputs"
+        onChange={(e) => SetLocation(e.target.value)}>
+          <option value="New York">New York</option>
+          <option value="Ontario">Ontario</option>
+          <option value="Texas">Texas</option>
+        </select>
 
         <label>When</label>
-        <select name="when" id="when"
+        <select className="inputs"
         onChange={(e) => SetTime(e.target.value)}>
           <option value="Immidiate">Immidiate</option>
           <option value="After 15 Days">After 15 Days</option>
           <option value="After 1 Month">After 1 Month</option>
         </select>
+        
         <label>Price</label>
-        <select name="Price" id="Price"
+        <select className="inputs"
         onChange={(e) => SetPrice(e.target.value)}>
           <option value={[500,2000]}>$500-2000</option>
           <option value={[2000,3000]}>$2000-3000</option>
@@ -59,7 +59,7 @@ console.log(price)
         </select>
 
         <label>PropertyType</label>
-        <select name="PropertyType" id="PropertyType"
+        <select className="inputs"
         onChange={(e) => SetType(e.target.value)}>
           <option value="Houses">Houses</option>
           <option value="Villa">Villa</option>
@@ -73,7 +73,8 @@ console.log(price)
             {filteredData.map(prop => (
                 <div className='render'>
                     <span> <img src={prop.img} height= "200px" width= "200px"/></span>
-                    <p>{`$ ${prop.price}/month`}</p>
+                    <span className="propPrice">{`$ ${prop.price}`}</span>
+                    <span>/month</span>
                     <h3>{prop.location}</h3>
                 </div>
 
