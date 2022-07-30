@@ -5,7 +5,7 @@ export default function Searchbar(props) {
   const [time, SetTime] = useState('Immidiate');
   const [price, SetPrice] = useState([500,2000]);
   const [type, SetType] = useState('Houses');
-  const [filteredData, SetFilteredData] = useState([props.props]);
+  const [filteredData, SetFilteredData] = useState(props.props);
   
 console.log(price)
 // console.log(price[1])
