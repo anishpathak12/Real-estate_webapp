@@ -1,20 +1,33 @@
 .Searchbar{
-    /* text-align: center; */
     background-color: aliceblue;
     text-align: center;
+    min-height: 100vh;
 }
+
+.bodyContent{
+    margin: 0 calc(15%);
+} 
 
 .header{
     display: flex;
-    justify-content: space-evenly;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.searchInput{
+    height: 30px;
 }
 
 .filterButtons{
     background-color: white;
     padding: 20px;
-    margin: 0 350px 30px 350px;
+    /* margin: 0 350px 30px 350px; */
 }
+
+/* label{
+    display: block;
+} */
 
 .inputs{
     margin-right: 20px;
@@ -24,4 +37,20 @@
     color: rgb(85, 85, 240);
     font-size: larger;
     font-weight: bold;
+}
+
+.render{
+    background-color:white;
+    width: 200px;
+}
+
+.Data{
+    /* width: 200px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    /* justify-content: space-evenly; */
+    /* flex-wrap: wrap; */
 }
