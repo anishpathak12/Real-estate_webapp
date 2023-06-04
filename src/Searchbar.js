@@ -11,6 +11,7 @@ export default function Searchbar(props) {
 
   console.log(price);
   // console.log(price[1])
+  
   const filterMethod = (e) => {
     e.preventDefault();
     SetFilteredData(
